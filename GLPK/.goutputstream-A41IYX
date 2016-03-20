@@ -1,0 +1,56 @@
+set TipoInversiones;
+
+set Periodos;
+
+set Escenarios;
+
+param retornos{i in TipoInversiones, e in Escenarios};
+/* retorno del tipo de inversión i para cada escenario s */
+
+param probabilidad{s in Escenarios};
+/* probabilidad para cada escenario s */
+
+/***************************/
+
+param ind{t in Periodos, s1 in Escenarios s2 in Escenarios}
+
+/* Los condicionales sobre las sumatorias de cada restricción
+se pueden implementar con un parámetro indicatriz (binario),
+por ejemplo "param ind{T,S,S}", donde el primer
+indice en S se utiliza en las sumatorias y el segundo es el
+recorrido de las restricciones.
+Los valores de dicho parámetro se usan como un coeficiente binario
+que al multiplicar las expresiones seleccionan, para el recoorido
+de todos sus índices, {T,S,S}, aquellas que se suman. */
+
+/**************************/
+
+var E{i in TipoInversiones, t in Periodos, s in Escenarios} >= 0, integer; /* no se si tiene que ser entero */
+/* retorno para el tipo de inversión i en el período p y el escenario s*/
+
+var x{i in TipoInversiones, t in Periodos, s in Escenarios} >= 0, integer;
+/* inversión para el tipo de inversión i en el período t y el escenario s*/
+
+var w(s in Escenario) >= 0, integer;
+/* déficit para el escenario s */
+
+var y(s in Escenario) >= 0, integer;
+/* superávit para el escenario s */
+
+/**************************/
+
+maximize resultado: sum{s in Escenarios} probabilidad * (-r * w[s1] + q * y[s1])
+/* función objetivo */
+
+/**************************/
+
+s.t. capital{s1 in Escenarios}: (sum{i in TipoInversiones} x[i,1,s1]) = b;
+/* Aparentemente en cada escenario puedo invertir b REVISARRRRRRRRRRRRRRRRRRR */ 
+
+s.t. XXXX{s1 in Escenarios}: ( (sum{i in TipoInversiones} -E[i,t-1,s1] * x[i,t-1,s1]) + (sum{i in TipoInversiones} x[i,t,s1]) ) = 0;
+/* NOMBRE y t es de 2 en adelante */
+
+s.t. ganancia{s1 in Escenarios}: (sum{i in TipoInversiones} E[i,H,s1] * x[i,H,s1] + w[s1] - y[s]) = G;
+
+s.t. no_anticipatividad
+

@@ -1,0 +1,24 @@
+2010-05-02  Joao Pedro Pedroso  <jpp@fc.up.pt>
+
+	* implemented support for modifying glpk model's data in python
+	* updated interface to GLPK version 4.43
+	* cleaned up code for this version
+
+2009-02-10  Joao Pedro Pedroso  <jpp@fc.up.pt>
+
+	* updated interface to GLPK version 4.36
+	* changed main class name in glpk.py from 'lpx' to 'glpk'
+	* now uses file glpk.h from the glpk distribution; 
+
+2007-05-28  Joao Pedro Pedroso  <jpp@fc.up.pt>
+
+	* updated interface to GLPK version 4.16
+
+2007-04-19  Joao Pedro Pedroso  <jpp@fc.up.pt>
+
+	* updated interface to GLPK version 4.15
+
+2007-04-01  Joao Pedro Pedroso  <jpp@fc.up.pt>
+
+	* version 0.1 released, for GLPK version 4.12
+
