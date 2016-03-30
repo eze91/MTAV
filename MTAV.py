@@ -43,6 +43,10 @@ def fila_valida(fila, n):
 			break
 	return valido
 
+def get_maximum(line):
+	m = re.search('= (\d+) \(', line)
+	return int(m.group(1))
+
 comando = input('''Ingrese el comando que desee ejecutar
 - asignar: asignar las viviendas
 - ayuda: informacion general
@@ -118,26 +122,82 @@ else:
 			'''
 			#call terminal
 			os.system('ls')
-			os.system("glpsol --model MTAV.mod --data MTAV_pref.dat --output MTAV_asign.sol --log tsp.log")
+			os.system("glpsol --model MTAV.mod --data MTAV_pref.dat --output MTAV_inter.sol")
 			#wait until the file is ready
 			time.sleep(2)
-			file = open("MTAV_asign.sol",'r')
+
+			# read objective
+			objective = 0
+			print("////////////////////////////////////////////////////////")
+			file = open("MTAV_inter.sol",'r')
+			lines = file.read().split('\n')
+			raw_asignaciones = []
+			for line in lines:
+				if is_asignation(line):
+					print("IS ASSIGNATION >>>> %s" % line)
+					objective = get_maximum(line)
+					break
+			print(objective)
+
+			file = open("MTAV_pref_empate.dat",'w')   # Trying to create a new file or open one
+			file.write('data;\n\n')
+			numeroFamilias = 0
+			familiasIN = ''
+			viviendasIN = ''
+			for preferencia in preferencias:
+				familiasIN = familiasIN + ' ' + preferencia[0]
+				viviendasIN = viviendasIN + ' v' + str(numeroFamilias)
+				numeroFamilias += 1
+			file.write('set C :=%s;\n\n' % familiasIN)
+			file.write('set V :=%s;\n\n' % viviendasIN)
+			file.write('param N := %d;\n\n' % CANT_FINAL)
+			file.write('param S := %s;\n\n' % objective)
+
+			file.write('param p :%s :=' %viviendasIN)
+			for preferencia in preferencias:
+				string_pref_array = map(str,preferencia[1])
+				string_pref = ' '.join(string_pref_array)
+				file.write("\n      %s %s" % (preferencia[0], string_pref))
+
+			file.write(';\n\nend;')
+
+			file.close()
+			'''
+			except:
+		    	print('No se pudo crear el archivo')
+		    	sys.exit(0) # quit Python
+			'''
+			#call terminal
+			os.system('ls')
+			os.system("glpsol --model MTAV_empate.mod --data MTAV_pref_empate.dat --output MTAV_asign.sol")
+			#wait until the file is ready
+			time.sleep(2)
+
+			os.system("clear")
 			#parse file and output asignation
 			file = open("MTAV_asign.sol",'r')
 			lines = file.read().split('\n')
 			raw_asignaciones = []
 			for i in range(0, len(lines) + 1):
 				if is_expected_header(lines[i]):
+					print("EXPECTED HEADER >>> %s" % lines[i])
 					for j in range(i + 2, i + 4 + N):
 						if is_activity_one(lines[j]):
+							print("IS ACTIVITY>>> %s" % lines[j])
 							raw_asignaciones.append(get_asignacion(lines[j]))
+						else:
+							print(lines[j])
 					break
+				else:
+					print(lines[i])
 
+
+			
 
 			print(raw_asignaciones)
 			print(familias)
 			print(viviendas)
-			os.system("clear")
+
 			print(file.read())
 			f = open('asignaciones_finales.txt','w')
 			f.write("Asignaciones finales\n\nFamilias : vivienda asignada\n---------------------------------\n")
@@ -148,13 +208,5 @@ else:
 			f.close()	
 
 			print("Se hizo la asignacion. Revise el archivo asignaciones.txt")
-
-
-
-	
-
-
-
-
 
 
