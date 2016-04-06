@@ -1,16 +1,17 @@
 data;
 
-set C := c0 c1 c2;
+set C := c0 c1 c2 c3;
 
-set V := v0 v1 v2;
+set V := v0 v1 v2 v3;
 
-param N := 3;
+param N := 4;
 
-param S := 5;
+param S := 6;
 
-param p : v0 v1 v2 :=
-      c0 1 2 3
-      c1 1 2 3
-      c2 3 1 2;
+param p : v0 v1 v2 v3 :=
+      c0 1 2 3 4
+      c1 1 2 3 4
+      c2 3 1 2 4
+      c3 3 4 2 1;
 
 end;
