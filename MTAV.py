@@ -4,7 +4,6 @@ import os
 import sys
 import time
 import re
-import xlrd
 import csv 
 
 class Menu:
@@ -26,9 +25,9 @@ Profesor Responsable:
 	def principal(self):
 		principal = '''
 Menu - Ingrese las letras de el comando a ejecutar
-- (I)nstrucciones : pasos a seguir para realizar la asignación correctamente.
+- (I)nstrucciones : pasos a seguir para realizar la asignación.
 - (A)siganar : ¿todo listo? Realiza la asignación final.
-- (M)etodología : acerca de la metodología utilizada para la asignación.
+- (M)etodología : metodología utilizada para la asignación.
 - (C)olaborar : ¿como puedo colaborar en el proyecto?
 - (L)icencia : información sobre licencia del programa. 
 - (S)alir
@@ -43,7 +42,7 @@ Menu - Ingrese las letras de el comando a ejecutar
 
 El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. Luego, en la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
 
-El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estandar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser como, puede ser '.', ',' o tabulador.
+El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estandar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser como, puede ser '.', ',', ';' o tabulador.
 
 Lo puede crear en su editor de planillas eletronica de su preferencia y exportarlo en formato CSV con el combre 'preferencias.csv' guardandolo en la misma carpeta del programa (llamada MTAV)
 
@@ -131,7 +130,7 @@ def get_asignacion(sentence):
 def fila_valida(fila, n):
 	fila_procesada = []
 	for elem in fila:
-		fila_procesada.append(int(elem.value))
+		fila_procesada.append(int(elem))
 	valido = len(fila) == n
 	for i in range(1,n + 1):
 		valido = valido and i in fila_procesada
@@ -145,7 +144,7 @@ def get_maximum(line):
 
 while True:
 	menu.principal()
-	comando = input()
+	comando = input('> ')
 	print()
 	if comando == 'M':
 		menu.metodologia()
@@ -159,15 +158,22 @@ while True:
 		menu.instrucciones()
 	elif comando == 'A':
 		print("Realizando la asignacion")
-		#read excel
-		book = xlrd.open_workbook('IngresoPreferenciasVivienda.xls')
-		first_sheet = book.sheet_by_index(0)
+		#read csv
+		preferencias_file = open('IngresoPreferenciasVivienda.csv', 'r')
+		separador = max(map((lambda x : (preferencias_file.read().count(x), x)), ['.', ',', ';', "\t"]))[1]
+		preferencias_file.close
+		preferencias_file = open('IngresoPreferenciasVivienda.csv', 'r')
+		preferencias_csv = csv.reader(preferencias_file, delimiter=separador)
+		preferencias_matrix = []
+		for line in preferencias_csv:
+			preferencias_matrix.append(line)
 
-		familias = first_sheet.col(0)
-		familias.pop(0)
-		viviendas = first_sheet.row(0)
-		viviendas.pop(0)
+		
+		# book = xlrd.open_workbook('IngresoPreferencias_matrixVivienda.xls')
+		viviendas = preferencias_matrix[0][1:]
+		familias = list(map(lambda x: x[0], preferencias_matrix))[1:]
 		CANT_FINAL = len(viviendas)
+
 		valido = len(familias) == len(viviendas)
 		if not valido:
 			print("La cantidad de familias debe coincidir con la cantidad de viviendas")
@@ -176,8 +182,8 @@ while True:
 			print(N)
 			preferencias = []
 			for i in range(1, len(familias) + 1):
-				listaPreferencias = first_sheet.row(i)
-				familia = listaPreferencias.pop(0)
+				listaPreferencias = preferencias_matrix[i][1:]
+				familia = preferencias_matrix[i][0]
 				valido_local = fila_valida(listaPreferencias, CANT_FINAL)
 				if not valido_local:
 					print("Los datos para la familia %s no son consistentes" % familia)
@@ -185,7 +191,7 @@ while True:
 				else:
 					preferenciasProcesadas = []
 					for elem in listaPreferencias:
-						preferenciasProcesadas.append(int(elem.value))
+						preferenciasProcesadas.append(int(elem))
 					preferencias.append(('c' + str(i-1), preferenciasProcesadas))
 
 			print("PREFERENCIAS")		
@@ -279,7 +285,7 @@ while True:
 				f = open('asignaciones_finales.txt','w')
 				f.write("Asignaciones finales\n\nFamilias : vivienda asignada\n---------------------------------\n")
 				for raw_asignacion in raw_asignaciones:
-					f.write('%s : %s\n' % (familias[raw_asignacion[0]].value, viviendas[raw_asignacion[1]].value))
+					f.write('%s : %s\n' % (familias[raw_asignacion[0]], viviendas[raw_asignacion[1]]))
 				f.write('\n')
 
 				f.close()	
