@@ -5,25 +5,26 @@ Sistema de maximizacion del beneficio de asignación para cooperativas de vivien
 
 El programa depende de la instalacion de GLPK.
 * Python 3 3.5.1
-
 * GLPK 4.52
 
 Para poder ejecutar instale Python3 (https://www.python.org/downloads/). Se testeo en Python 3.5.1
 
 Antes de ejecutarlo instale el GLPK (https://en.wikibooks.org/wiki/GLPK) y cheque que este instalado correctamente ejecutando.
+```
 $ glpsol --version
+```
 
 El programa esta testeado con la version v4.52.
 
 Luego de instaladas estas dependencias ejecute el programa de la siguiente forma:
+```
 $ python3 MTAV.py
-
+```
 Por mas informacion recurra a la carpeta 'documentacion'.
 
 ## Instrucciones:
 
 ### 1) Preparación del archivo
-   -----------------------
 
 El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. Luego, en la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
 
@@ -33,16 +34,12 @@ Lo puede crear en su editor de planillas eletronica de su preferencia y exportar
 
 Ejemplo en editor de planilla de cálculo:
 
-                   |  101 | 102 | 201 | 202 |     <---- Identificares de vivienda
----------------------------------------------
-Sanchez            |   4  |  3  |  1  |  2  |
----------------------------------------------
-Pino               |   2  |  4  |  1  |  3  |
----------------------------------------------
-Cancela            |   4  |  2  |  1  |  3  |
----------------------------------------------
-Rodriquez Da´Silva |   3  |  1  |  4  |  2  |
----------------------------------------------
+|                   | 101 | 102 | 201 | 202 |     <---- Identificares de vivienda
+| ----------------- | --- | ----| --- | --- |
+|Sanchez            |  4  |  3  |  1  |  2  |
+|Pino               |  2  |  4  |  1  |  3  |
+|Cancela            |  4  |  2  |  1  |  3  |
+|Rodriquez Da´Silva |  3  |  1  |  4  |  2  |
 
  ^
  |
@@ -68,9 +65,7 @@ Se cuenta con un ejemplo de entrada ('preferencias_EJEMPLO.csv') para tomar como
 
 
 ### 2) Ejecutar comando Asignar
-   ------------------------
 
 Luego de creado el archivo como se detalla en el punto 1 seleccione el comando (A)signar. Luego el programa pedirá confirmacion para empezar la asignación. Si cree que el el archivo preferencias es correcto, acepte. En breves segundos la asignación debería estar completa.
 
 ### 3) Asignación final
-   ----------------
