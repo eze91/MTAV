@@ -24,7 +24,7 @@ Por mas informacion recurra a la carpeta 'documentacion'.
 
 ## Instrucciones:
 
-### 1) Preparación del archivo
+### Preparación del archivo
 
 El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. Luego, en la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
 
@@ -47,7 +47,7 @@ El siguiente ejemplo representa que la vivienda 201 es la preferida por la famil
 Los cuidados que se deben tener (y que serán chequiados por el programa avisando en caso de algún tipo de anomalia) son:
 
 - La cantidad de familais debe ser igual a la cantidad de viviendas (cantidad de filas igual a la cantidad de columnas).
-- Las preferencias deben ser una permutacion de naturales de [1, 2, ..., CANTIDAD_VIVIENDAS] (sin repetidos ni salteados)
+- Las preferencias deben ser una permutacion de naturales de { 1, 2, ... , CANTIDAD_VIVIENDAS } (sin repetidos ni salteados)
 
 La tabla anterior exportada a CSV:
 ```
@@ -60,13 +60,17 @@ Rodriquez Da´Silva ,  3  ,  1  ,  4  ,  2
 Se cuenta con un ejemplo de entrada ('preferencias_EJEMPLO.csv') para tomar como referencia.
 
 
-### 2) Ejecutar comando Asignar
+### Ejecutar comando Asignar
 
 Luego de creado el archivo como se detalla en el punto 1 seleccione el comando (A)signar. Luego el programa pedirá confirmacion para empezar la asignación. Si cree que el el archivo preferencias es correcto, acepte. En breves segundos la asignación debería estar completa.
 
-### 3) Asignación final
+### Asignación final
 
 ## Metodología
+
+En la asignación se busca maximizar la satisfacción global de todos los cooperativistas. Para esto (y debido a que la forma de ingresar las preferencias es con 1 siendo la vivienda preferida y a medida que crece aumenta la insatisfacción) se busca minimizar la suma de todas las preferencias por las viviendas.
+
+Luego de encontrado un mínimo, se procede a buscar otra asignación que levante la máxima insatisfacción de un cooperativista.
 
 ## Colaboración
 
