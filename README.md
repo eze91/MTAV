@@ -14,7 +14,7 @@ Antes de ejecutarlo instale el GLPK (https://en.wikibooks.org/wiki/GLPK) y chequ
 $ glpsol --version
 ```
 
-El programa esta testeado con la version v4.52.
+El programa esta testeado con la version 4.52.
 
 Luego de instaladas estas dependencias ejecute el programa de la siguiente forma:
 ```
