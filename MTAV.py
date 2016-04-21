@@ -4,7 +4,7 @@ import os
 import sys
 import time
 import re
-import csv 
+import csv
 
 class Menu:
 	def presentar(self):
