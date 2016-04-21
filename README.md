@@ -34,7 +34,7 @@ Lo puede crear en su editor de planillas eletronica de su preferencia y exportar
 
 Ejemplo en editor de planilla de cálculo:
 
-|                   | 101 | 102 | 201 | 202 |     <---- Identificares de vivienda
+|                   | 101 | 102 | 201 | 202 |
 | ----------------- | --- | ----| --- | --- |
 |Sanchez            |  4  |  3  |  1  |  2  |
 |Pino               |  2  |  4  |  1  |  3  |
@@ -54,13 +54,13 @@ Los cuidados que se deben tener (y que serán chequiados por el programa avisand
 - Las preferencias deben ser una permutacion de naturales de [1, 2, ..., CANTIDAD_VIVIENDAS] (sin repetidos ni salteados)
 
 La tabla anterior exportada a CSV:
-
+```
                    ,  101 , 102 , 201 , 202
 Sanchez            ,  1  ,  3  ,  4  ,  2 
 Pino               ,  2  ,  4  ,  1  ,  3 
 Cancela            ,  4  ,  2  ,  1  ,  3 
 Rodriquez Da´Silva ,  3  ,  1  ,  4  ,  2 
-
+```
 Se cuenta con un ejemplo de entrada ('preferencias_EJEMPLO.csv') para tomar como referencia.
 
 
