@@ -1,0 +1,13 @@
+Asignaciones finales
+
+Familias : vivienda asignada
+---------------------------------
+Perez : v2
+Sanchez : v1
+Casero : v3
+
+Satisfacción
+---------------------------------
+Global: 5
+Promedio: 1.666667
+Mínima: 2

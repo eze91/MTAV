@@ -26,9 +26,9 @@ Profesor Responsable:
 		principal = '''----------------------------------------------------------------------
 Menu - Ingrese las letras del comando a ejecutar:
 - (I)nstrucciones : pasos a seguir para realizar la asignación.
-- (A)siganar : ¿todo listo? Realiza la asignación final.
+- (A)signar : ¿todo listo? Realiza la asignación final.
 - (M)etodología : metodología utilizada para la asignación.
-- (C)olaborar : ¿como puedo colaborar en el proyecto?
+- (C)olaborar : ¿como puedo colaborar con el proyecto?
 - (L)icencia : información sobre licencia del programa. 
 - (S)alir
 
@@ -70,7 +70,7 @@ def is_activity_one(sentence):
 	return "*              1" in sentence
 
 def is_asignation(sentence):
-	if 'Objective:  s = ' in sentence:
+	if 'Objective:  s = ' in sentence or 'Objective:  resultado = ' in sentence:
 		return True
 
 def get_asignacion(sentence):
@@ -169,7 +169,7 @@ while True:
 				#call terminal
 				os.system("glpsol --model utils_GLPK/modelos/MTAV.mod --data utils_GLPK/datos/MTAV_pref.dat --output utils_GLPK/soluciones/MTAV_inter.sol --log utils_GLPK/logs/ejecucion_primaria.log")
 				#wait until the file is ready
-				time.sleep(2)
+				time.sleep(1)
 
 				# read objective
 				objective = 0
@@ -180,7 +180,6 @@ while True:
 					if is_asignation(line):
 						objective = get_maximum(line)
 						break
-				print(objective)
 
 				file = open("utils_GLPK/datos/MTAV_pref_empate.dat",'w')   # Trying to create a new file or open one
 				file.write('data;\n\n')
@@ -208,7 +207,7 @@ while True:
 				#call terminal
 				os.system("glpsol --model utils_GLPK/modelos/MTAV_empate.mod --data utils_GLPK/datos/MTAV_pref_empate.dat --output utils_GLPK/soluciones/MTAV_asign.sol --log utils_GLPK/logs/ejecucion_secundaria.log")
 				#wait until the file is ready
-				time.sleep(2)
+				time.sleep(1)
 
 				os.system("clear")
 				#parse file and output asignation
@@ -221,12 +220,24 @@ while True:
 							if is_activity_one(lines[j]):
 								raw_asignaciones.append(get_asignacion(lines[j]))
 						break
+				file.close()
+				minima = 0
+				file = open("utils_GLPK/soluciones/MTAV_asign.sol",'r')
+				for line in lines:
+					if is_asignation(line):
+						minima = get_maximum(line)
+						break
+				file.close()
+
 				f = open('asignaciones_finales.txt','w')
 				f.write("Asignaciones finales\n\nFamilias : vivienda asignada\n---------------------------------\n")
 				for raw_asignacion in raw_asignaciones:
 					f.write('%s : %s\n' % (familias[raw_asignacion[0]], viviendas[raw_asignacion[1]]))
 				f.write('\n')
-
+				f.write("Satisfacción\n---------------------------------\n")
+				f.write('Global : %d\n' % objective)
+				f.write('Promedio : %f\n' % (float(objective)/CANT_FINAL))
+				f.write('Mínima : %d\n' % minima)
 				f.close()	
 
 				print("\nSE COMPLETÓ LA ASIGNACION.\nPor favor revise el archivo asignaciones_finales.txt\n")
