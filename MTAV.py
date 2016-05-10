@@ -241,6 +241,12 @@ while True:
 				f.close()	
 
 				print("\nSE COMPLETÓ LA ASIGNACION.\nPor favor revise el archivo asignaciones_finales.txt\n")
+				total = 0
+				for raw_asignacion in raw_asignaciones:
+					total += preferencias[raw_asignacion[0]][1][raw_asignacion[1]]
+				print(preferencias)
+				print(raw_asignaciones)
+				print(total)
 				os.system("open asignaciones_finales.txt")
 
 	else:

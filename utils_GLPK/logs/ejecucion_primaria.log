@@ -6,8 +6,8 @@ Reading model section from utils_GLPK/modelos/MTAV.mod...
 utils_GLPK/modelos/MTAV.mod:22: warning: unexpected end of file; missing end statement inserted
 22 lines were read
 Reading data section from utils_GLPK/datos/MTAV_pref.dat...
-utils_GLPK/datos/MTAV_pref.dat:12: warning: final NL missing before end of file
-12 lines were read
+utils_GLPK/datos/MTAV_pref.dat:29: warning: final NL missing before end of file
+29 lines were read
 Generating s...
 Generating unicaAsignacionCoperativista_mayorIgual...
 Generating unicaAsignacionCoperativista_menorIgual...
@@ -15,28 +15,28 @@ Generating unicaAsignacionCasa_mayorIgual...
 Generating unicaAsignacionCasa_menorIgual...
 Model has been successfully generated
 GLPK Integer Optimizer, v4.52
-13 rows, 9 columns, 45 non-zeros
-9 integer variables, all of which are binary
+81 rows, 400 columns, 2000 non-zeros
+400 integer variables, all of which are binary
 Preprocessing...
-12 rows, 9 columns, 36 non-zeros
-9 integer variables, all of which are binary
+80 rows, 400 columns, 1600 non-zeros
+400 integer variables, all of which are binary
 Scaling...
  A: min|aij| =  1.000e+00  max|aij| =  1.000e+00  ratio =  1.000e+00
 Problem data seem to be well scaled
 Constructing initial basis...
-Size of triangular part is 12
+Size of triangular part is 80
 Solving LP relaxation...
 GLPK Simplex Optimizer, v4.52
-12 rows, 9 columns, 36 non-zeros
-      0: obj =   0.000000000e+00  infeas =  6.000e+00 (0)
-*     7: obj =   5.000000000e+00  infeas =  0.000e+00 (0)
-*     8: obj =   5.000000000e+00  infeas =  0.000e+00 (0)
+80 rows, 400 columns, 1600 non-zeros
+      0: obj =   0.000000000e+00  infeas =  4.000e+01 (0)
+*    58: obj =   1.930000000e+02  infeas =  0.000e+00 (0)
+*   169: obj =   5.900000000e+01  infeas =  0.000e+00 (0)
 OPTIMAL LP SOLUTION FOUND
 Integer optimization begins...
-+     8: mip =     not found yet >=              -inf        (1; 0)
-+     9: >>>>>   5.000000000e+00 >=   5.000000000e+00   0.0% (1; 0)
-+     9: mip =   5.000000000e+00 >=     tree is empty   0.0% (0; 1)
++   169: mip =     not found yet >=              -inf        (1; 0)
++   173: >>>>>   5.900000000e+01 >=   5.900000000e+01   0.0% (1; 0)
++   173: mip =   5.900000000e+01 >=     tree is empty   0.0% (0; 1)
 INTEGER OPTIMAL SOLUTION FOUND
 Time used:   0.0 secs
-Memory used: 0.1 Mb (140335 bytes)
+Memory used: 0.8 Mb (826176 bytes)
 Writing MIP solution to `utils_GLPK/soluciones/MTAV_inter.sol'...
