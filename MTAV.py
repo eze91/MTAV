@@ -192,7 +192,6 @@ while True:
 					numeroFamilias += 1
 				file.write('set C :=%s;\n\n' % familiasIN)
 				file.write('set V :=%s;\n\n' % viviendasIN)
-				file.write('param N := %d;\n\n' % CANT_FINAL)
 				file.write('param S := %s;\n\n' % objective)
 
 				file.write('param p :%s :=' %viviendasIN)
@@ -245,6 +244,8 @@ while True:
 				for raw_asignacion in raw_asignaciones:
 					total += preferencias[raw_asignacion[0]][1][raw_asignacion[1]]
 				print(preferencias)
+				for raw_asignacion in raw_asignaciones:
+					print(familias[raw_asignacion[0]], viviendas[raw_asignacion[1]])
 				print(raw_asignaciones)
 				print(total)
 				os.system("open asignaciones_finales.txt")

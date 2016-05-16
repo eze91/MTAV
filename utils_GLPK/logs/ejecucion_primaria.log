@@ -3,40 +3,49 @@ Parameter(s) specified in the command line:
  --model utils_GLPK/modelos/MTAV.mod --data utils_GLPK/datos/MTAV_pref.dat
  --output utils_GLPK/soluciones/MTAV_inter.sol --log utils_GLPK/logs/ejecucion_primaria.log
 Reading model section from utils_GLPK/modelos/MTAV.mod...
-utils_GLPK/modelos/MTAV.mod:22: warning: unexpected end of file; missing end statement inserted
-22 lines were read
+utils_GLPK/modelos/MTAV.mod:29: warning: unexpected end of file; missing end statement inserted
+29 lines were read
 Reading data section from utils_GLPK/datos/MTAV_pref.dat...
 utils_GLPK/datos/MTAV_pref.dat:29: warning: final NL missing before end of file
 29 lines were read
-Generating s...
+Generating resultado...
+Generating z_menorIgual...
 Generating unicaAsignacionCoperativista_mayorIgual...
 Generating unicaAsignacionCoperativista_menorIgual...
 Generating unicaAsignacionCasa_mayorIgual...
 Generating unicaAsignacionCasa_menorIgual...
 Model has been successfully generated
 GLPK Integer Optimizer, v4.52
-81 rows, 400 columns, 2000 non-zeros
-400 integer variables, all of which are binary
+101 rows, 401 columns, 2021 non-zeros
+401 integer variables, 400 of which are binary
 Preprocessing...
-80 rows, 400 columns, 1600 non-zeros
-400 integer variables, all of which are binary
+100 rows, 401 columns, 2020 non-zeros
+401 integer variables, 400 of which are binary
 Scaling...
- A: min|aij| =  1.000e+00  max|aij| =  1.000e+00  ratio =  1.000e+00
-Problem data seem to be well scaled
+ A: min|aij| =  1.000e+00  max|aij| =  2.000e+01  ratio =  2.000e+01
+GM: min|aij| =  4.729e-01  max|aij| =  2.115e+00  ratio =  4.472e+00
+EQ: min|aij| =  2.236e-01  max|aij| =  1.000e+00  ratio =  4.472e+00
+2N: min|aij| =  2.500e-01  max|aij| =  1.500e+00  ratio =  6.000e+00
 Constructing initial basis...
-Size of triangular part is 80
+Size of triangular part is 100
 Solving LP relaxation...
 GLPK Simplex Optimizer, v4.52
-80 rows, 400 columns, 1600 non-zeros
-      0: obj =   0.000000000e+00  infeas =  4.000e+01 (0)
-*    58: obj =   1.930000000e+02  infeas =  0.000e+00 (0)
-*   169: obj =   5.900000000e+01  infeas =  0.000e+00 (0)
+100 rows, 401 columns, 2020 non-zeros
+      0: obj =   0.000000000e+00  infeas =  2.250e+01 (0)
+*    80: obj =   6.000000000e+00  infeas =  1.769e-15 (0)
+*   191: obj =   3.290010216e+00  infeas =  1.110e-16 (0)
 OPTIMAL LP SOLUTION FOUND
 Integer optimization begins...
-+   169: mip =     not found yet >=              -inf        (1; 0)
-+   173: >>>>>   5.900000000e+01 >=   5.900000000e+01   0.0% (1; 0)
-+   173: mip =   5.900000000e+01 >=     tree is empty   0.0% (0; 1)
++   191: mip =     not found yet >=              -inf        (1; 0)
++  1242: >>>>>   1.900000000e+01 >=   4.000000000e+00  78.9% (95; 0)
++  2338: >>>>>   1.300000000e+01 >=   4.000000000e+00  69.2% (141; 17)
++  2800: >>>>>   1.200000000e+01 >=   4.000000000e+00  66.7% (95; 92)
++  4052: >>>>>   1.100000000e+01 >=   5.000000000e+00  54.5% (113; 117)
++  4196: >>>>>   1.000000000e+01 >=   5.000000000e+00  50.0% (102; 139)
++  4412: >>>>>   9.000000000e+00 >=   6.000000000e+00  33.3% (58; 227)
++  4470: >>>>>   8.000000000e+00 >=   7.000000000e+00  12.5% (38; 253)
++  4775: mip =   8.000000000e+00 >=     tree is empty   0.0% (0; 473)
 INTEGER OPTIMAL SOLUTION FOUND
-Time used:   0.0 secs
-Memory used: 0.8 Mb (826176 bytes)
+Time used:   0.5 secs
+Memory used: 1.2 Mb (1286167 bytes)
 Writing MIP solution to `utils_GLPK/soluciones/MTAV_inter.sol'...

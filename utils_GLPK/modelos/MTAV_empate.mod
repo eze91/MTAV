@@ -4,9 +4,6 @@ set C;
 set V;
 /* viviendas */
 
-param N;
-/* cantidad de cooperativistas y viviendas */
-
 param S;
 /* satisfacción */
 
@@ -16,13 +13,8 @@ param p{c in C, v in V};
 var x{c in C, v in V}, binary;
 /* indica si el cooperativista c es asignado a la vivienda v */
 
-var z, integer;
-/* variable auxiliar para representar la mínima satisfacción */
-
-minimize resultado: z;
-
-s.t. z_menorIgual{c in C}: z >= sum{v in V} p[c,v] * x[c,v];
-/* busco que z sea menor o igual que la satisfacción de cada cooperativista c */
+minimize s: sum{c in C, v in V} p[c,v] * x[c,v];
+/* preferencias acumuladas */
 
 s.t. unicaAsignacionCoperativista_mayorIgual{c in C}: sum{v in V} x[c,v] >= 1;
 s.t. unicaAsignacionCoperativista_menorIgual{c in C}: sum{v in V} x[c,v] <= 1;
@@ -32,7 +24,5 @@ s.t. unicaAsignacionCasa_mayorIgual{v in V}: sum{c in C} x[c,v] >= 1;
 s.t. unicaAsignacionCasa_menorIgual{v in V}: sum{c in C} x[c,v] <= 1;
 /* la vivienda v solo tiene un cooperativista asignado */
 
-s.t. s_mayorIgual: sum{c in C, v in V} p[c,v] * x[c,v] >= S; 
-s.t. s_menorIgual: sum{c in C, v in V} p[c,v] * x[c,v] <= S;
+s.t. z_menorIgual{c in C}: sum{v in V} p[c,v] * x[c,v] <= S;
 /* nivel de satisfacción */
-

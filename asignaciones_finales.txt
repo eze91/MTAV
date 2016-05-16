@@ -2,29 +2,29 @@ Asignaciones finales
 
 Familias : vivienda asignada
 ---------------------------------
-Laura Nunez : 901
+Laura Nunez : 1101
 Patricia Lagos : 402
 Schmidt : 602
-Suarez : 302
+Suarez : 702
 Celiana Barolin : 1001
 Fernanda Apud : 701
-Fernando Alvez : 1201
-Gabriela Hernandez : 1101
-Jorge Ingold : 601
-Liana Ramirez : 501
-Magali Fernandez : 1202
-Mariana Curto : 802
+Fernando Alvez : 901
+Gabriela Hernandez : 501
+Jorge Ingold : 1201
+Liana Ramirez : 601
+Magali Fernandez : 301
+Mariana Curto : 302
 Maximiliano Tissot : 801
-Nicolis Cabrera : 301
+Nicolis Cabrera : 1202
 Sebastian Martinez : 1002
 Shirley Ramirez : 502
-Sofia Bertullo : 702
+Sofia Bertullo : 802
 Aldo Ariceta : 902
 Ana Sanz : 1102
 Hilda Acuna : 401
 
 Satisfacción
 ---------------------------------
-Global : 59
-Promedio : 2.950000
-Mínima : 9
+Global : 8
+Promedio : 0.400000
+Mínima : 60

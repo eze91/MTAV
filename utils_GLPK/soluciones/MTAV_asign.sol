@@ -1,215 +1,213 @@
 Problem:    MTAV_empate
-Rows:       103
-Columns:    401 (401 integer, 400 binary)
-Non-zeros:  2821
+Rows:       101
+Columns:    400 (400 integer, 400 binary)
+Non-zeros:  2400
 Status:     INTEGER OPTIMAL
-Objective:  resultado = 9 (MINimum)
+Objective:  s = 60 (MINimum)
 
    No.   Row name        Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
-     1 resultado                   9                             
-     2 z_menorIgual[c0]
-                                   6            -0               
-     3 z_menorIgual[c1]
-                                   7            -0               
-     4 z_menorIgual[c2]
-                                   7            -0               
-     5 z_menorIgual[c3]
-                                   7            -0               
-     6 z_menorIgual[c4]
-                                   8            -0               
-     7 z_menorIgual[c5]
-                                   7            -0               
-     8 z_menorIgual[c6]
-                                   8            -0               
-     9 z_menorIgual[c7]
-                                   8            -0               
-    10 z_menorIgual[c8]
-                                   2            -0               
-    11 z_menorIgual[c9]
-                                   0            -0               
-    12 z_menorIgual[c10]
-                                   5            -0               
-    13 z_menorIgual[c11]
-                                   6            -0               
-    14 z_menorIgual[c12]
-                                   7            -0               
-    15 z_menorIgual[c13]
-                                   8            -0               
-    16 z_menorIgual[c14]
-                                   5            -0               
-    17 z_menorIgual[c15]
-                                   2            -0               
-    18 z_menorIgual[c16]
-                                   8            -0               
-    19 z_menorIgual[c17]
-                                   6            -0               
-    20 z_menorIgual[c18]
-                                   7            -0               
-    21 z_menorIgual[c19]
-                                   7            -0               
-    22 unicaAsignacionCoperativista_mayorIgual[c0]
+     1 s                          60                             
+     2 unicaAsignacionCoperativista_mayorIgual[c0]
                                    1             1               
-    23 unicaAsignacionCoperativista_mayorIgual[c1]
+     3 unicaAsignacionCoperativista_mayorIgual[c1]
                                    1             1               
-    24 unicaAsignacionCoperativista_mayorIgual[c2]
+     4 unicaAsignacionCoperativista_mayorIgual[c2]
                                    1             1               
-    25 unicaAsignacionCoperativista_mayorIgual[c3]
+     5 unicaAsignacionCoperativista_mayorIgual[c3]
                                    1             1               
-    26 unicaAsignacionCoperativista_mayorIgual[c4]
+     6 unicaAsignacionCoperativista_mayorIgual[c4]
                                    1             1               
-    27 unicaAsignacionCoperativista_mayorIgual[c5]
+     7 unicaAsignacionCoperativista_mayorIgual[c5]
                                    1             1               
-    28 unicaAsignacionCoperativista_mayorIgual[c6]
+     8 unicaAsignacionCoperativista_mayorIgual[c6]
                                    1             1               
-    29 unicaAsignacionCoperativista_mayorIgual[c7]
+     9 unicaAsignacionCoperativista_mayorIgual[c7]
                                    1             1               
-    30 unicaAsignacionCoperativista_mayorIgual[c8]
+    10 unicaAsignacionCoperativista_mayorIgual[c8]
                                    1             1               
-    31 unicaAsignacionCoperativista_mayorIgual[c9]
+    11 unicaAsignacionCoperativista_mayorIgual[c9]
                                    1             1               
-    32 unicaAsignacionCoperativista_mayorIgual[c10]
+    12 unicaAsignacionCoperativista_mayorIgual[c10]
                                    1             1               
-    33 unicaAsignacionCoperativista_mayorIgual[c11]
+    13 unicaAsignacionCoperativista_mayorIgual[c11]
                                    1             1               
-    34 unicaAsignacionCoperativista_mayorIgual[c12]
+    14 unicaAsignacionCoperativista_mayorIgual[c12]
                                    1             1               
-    35 unicaAsignacionCoperativista_mayorIgual[c13]
+    15 unicaAsignacionCoperativista_mayorIgual[c13]
                                    1             1               
-    36 unicaAsignacionCoperativista_mayorIgual[c14]
+    16 unicaAsignacionCoperativista_mayorIgual[c14]
                                    1             1               
-    37 unicaAsignacionCoperativista_mayorIgual[c15]
+    17 unicaAsignacionCoperativista_mayorIgual[c15]
                                    1             1               
-    38 unicaAsignacionCoperativista_mayorIgual[c16]
+    18 unicaAsignacionCoperativista_mayorIgual[c16]
                                    1             1               
-    39 unicaAsignacionCoperativista_mayorIgual[c17]
+    19 unicaAsignacionCoperativista_mayorIgual[c17]
                                    1             1               
-    40 unicaAsignacionCoperativista_mayorIgual[c18]
+    20 unicaAsignacionCoperativista_mayorIgual[c18]
                                    1             1               
-    41 unicaAsignacionCoperativista_mayorIgual[c19]
+    21 unicaAsignacionCoperativista_mayorIgual[c19]
                                    1             1               
-    42 unicaAsignacionCoperativista_menorIgual[c0]
+    22 unicaAsignacionCoperativista_menorIgual[c0]
                                    1                           1 
-    43 unicaAsignacionCoperativista_menorIgual[c1]
+    23 unicaAsignacionCoperativista_menorIgual[c1]
                                    1                           1 
-    44 unicaAsignacionCoperativista_menorIgual[c2]
+    24 unicaAsignacionCoperativista_menorIgual[c2]
                                    1                           1 
-    45 unicaAsignacionCoperativista_menorIgual[c3]
+    25 unicaAsignacionCoperativista_menorIgual[c3]
                                    1                           1 
-    46 unicaAsignacionCoperativista_menorIgual[c4]
+    26 unicaAsignacionCoperativista_menorIgual[c4]
                                    1                           1 
-    47 unicaAsignacionCoperativista_menorIgual[c5]
+    27 unicaAsignacionCoperativista_menorIgual[c5]
                                    1                           1 
-    48 unicaAsignacionCoperativista_menorIgual[c6]
+    28 unicaAsignacionCoperativista_menorIgual[c6]
                                    1                           1 
-    49 unicaAsignacionCoperativista_menorIgual[c7]
+    29 unicaAsignacionCoperativista_menorIgual[c7]
                                    1                           1 
-    50 unicaAsignacionCoperativista_menorIgual[c8]
+    30 unicaAsignacionCoperativista_menorIgual[c8]
                                    1                           1 
-    51 unicaAsignacionCoperativista_menorIgual[c9]
+    31 unicaAsignacionCoperativista_menorIgual[c9]
                                    1                           1 
-    52 unicaAsignacionCoperativista_menorIgual[c10]
+    32 unicaAsignacionCoperativista_menorIgual[c10]
                                    1                           1 
-    53 unicaAsignacionCoperativista_menorIgual[c11]
+    33 unicaAsignacionCoperativista_menorIgual[c11]
                                    1                           1 
-    54 unicaAsignacionCoperativista_menorIgual[c12]
+    34 unicaAsignacionCoperativista_menorIgual[c12]
                                    1                           1 
-    55 unicaAsignacionCoperativista_menorIgual[c13]
+    35 unicaAsignacionCoperativista_menorIgual[c13]
                                    1                           1 
-    56 unicaAsignacionCoperativista_menorIgual[c14]
+    36 unicaAsignacionCoperativista_menorIgual[c14]
                                    1                           1 
-    57 unicaAsignacionCoperativista_menorIgual[c15]
+    37 unicaAsignacionCoperativista_menorIgual[c15]
                                    1                           1 
-    58 unicaAsignacionCoperativista_menorIgual[c16]
+    38 unicaAsignacionCoperativista_menorIgual[c16]
                                    1                           1 
-    59 unicaAsignacionCoperativista_menorIgual[c17]
+    39 unicaAsignacionCoperativista_menorIgual[c17]
                                    1                           1 
-    60 unicaAsignacionCoperativista_menorIgual[c18]
+    40 unicaAsignacionCoperativista_menorIgual[c18]
                                    1                           1 
-    61 unicaAsignacionCoperativista_menorIgual[c19]
+    41 unicaAsignacionCoperativista_menorIgual[c19]
                                    1                           1 
-    62 unicaAsignacionCasa_mayorIgual[v0]
+    42 unicaAsignacionCasa_mayorIgual[v0]
                                    1             1               
-    63 unicaAsignacionCasa_mayorIgual[v1]
+    43 unicaAsignacionCasa_mayorIgual[v1]
                                    1             1               
-    64 unicaAsignacionCasa_mayorIgual[v2]
+    44 unicaAsignacionCasa_mayorIgual[v2]
                                    1             1               
-    65 unicaAsignacionCasa_mayorIgual[v3]
+    45 unicaAsignacionCasa_mayorIgual[v3]
                                    1             1               
-    66 unicaAsignacionCasa_mayorIgual[v4]
+    46 unicaAsignacionCasa_mayorIgual[v4]
                                    1             1               
-    67 unicaAsignacionCasa_mayorIgual[v5]
+    47 unicaAsignacionCasa_mayorIgual[v5]
                                    1             1               
-    68 unicaAsignacionCasa_mayorIgual[v6]
+    48 unicaAsignacionCasa_mayorIgual[v6]
                                    1             1               
-    69 unicaAsignacionCasa_mayorIgual[v7]
+    49 unicaAsignacionCasa_mayorIgual[v7]
                                    1             1               
-    70 unicaAsignacionCasa_mayorIgual[v8]
+    50 unicaAsignacionCasa_mayorIgual[v8]
                                    1             1               
-    71 unicaAsignacionCasa_mayorIgual[v9]
+    51 unicaAsignacionCasa_mayorIgual[v9]
                                    1             1               
-    72 unicaAsignacionCasa_mayorIgual[v10]
+    52 unicaAsignacionCasa_mayorIgual[v10]
                                    1             1               
-    73 unicaAsignacionCasa_mayorIgual[v11]
+    53 unicaAsignacionCasa_mayorIgual[v11]
                                    1             1               
-    74 unicaAsignacionCasa_mayorIgual[v12]
+    54 unicaAsignacionCasa_mayorIgual[v12]
                                    1             1               
-    75 unicaAsignacionCasa_mayorIgual[v13]
+    55 unicaAsignacionCasa_mayorIgual[v13]
                                    1             1               
-    76 unicaAsignacionCasa_mayorIgual[v14]
+    56 unicaAsignacionCasa_mayorIgual[v14]
                                    1             1               
-    77 unicaAsignacionCasa_mayorIgual[v15]
+    57 unicaAsignacionCasa_mayorIgual[v15]
                                    1             1               
-    78 unicaAsignacionCasa_mayorIgual[v16]
+    58 unicaAsignacionCasa_mayorIgual[v16]
                                    1             1               
-    79 unicaAsignacionCasa_mayorIgual[v17]
+    59 unicaAsignacionCasa_mayorIgual[v17]
                                    1             1               
-    80 unicaAsignacionCasa_mayorIgual[v18]
+    60 unicaAsignacionCasa_mayorIgual[v18]
                                    1             1               
-    81 unicaAsignacionCasa_mayorIgual[v19]
+    61 unicaAsignacionCasa_mayorIgual[v19]
                                    1             1               
-    82 unicaAsignacionCasa_menorIgual[v0]
+    62 unicaAsignacionCasa_menorIgual[v0]
                                    1                           1 
-    83 unicaAsignacionCasa_menorIgual[v1]
+    63 unicaAsignacionCasa_menorIgual[v1]
                                    1                           1 
-    84 unicaAsignacionCasa_menorIgual[v2]
+    64 unicaAsignacionCasa_menorIgual[v2]
                                    1                           1 
-    85 unicaAsignacionCasa_menorIgual[v3]
+    65 unicaAsignacionCasa_menorIgual[v3]
                                    1                           1 
-    86 unicaAsignacionCasa_menorIgual[v4]
+    66 unicaAsignacionCasa_menorIgual[v4]
                                    1                           1 
-    87 unicaAsignacionCasa_menorIgual[v5]
+    67 unicaAsignacionCasa_menorIgual[v5]
                                    1                           1 
-    88 unicaAsignacionCasa_menorIgual[v6]
+    68 unicaAsignacionCasa_menorIgual[v6]
                                    1                           1 
-    89 unicaAsignacionCasa_menorIgual[v7]
+    69 unicaAsignacionCasa_menorIgual[v7]
                                    1                           1 
-    90 unicaAsignacionCasa_menorIgual[v8]
+    70 unicaAsignacionCasa_menorIgual[v8]
                                    1                           1 
-    91 unicaAsignacionCasa_menorIgual[v9]
+    71 unicaAsignacionCasa_menorIgual[v9]
                                    1                           1 
-    92 unicaAsignacionCasa_menorIgual[v10]
+    72 unicaAsignacionCasa_menorIgual[v10]
                                    1                           1 
-    93 unicaAsignacionCasa_menorIgual[v11]
+    73 unicaAsignacionCasa_menorIgual[v11]
                                    1                           1 
-    94 unicaAsignacionCasa_menorIgual[v12]
+    74 unicaAsignacionCasa_menorIgual[v12]
                                    1                           1 
-    95 unicaAsignacionCasa_menorIgual[v13]
+    75 unicaAsignacionCasa_menorIgual[v13]
                                    1                           1 
-    96 unicaAsignacionCasa_menorIgual[v14]
+    76 unicaAsignacionCasa_menorIgual[v14]
                                    1                           1 
-    97 unicaAsignacionCasa_menorIgual[v15]
+    77 unicaAsignacionCasa_menorIgual[v15]
                                    1                           1 
-    98 unicaAsignacionCasa_menorIgual[v16]
+    78 unicaAsignacionCasa_menorIgual[v16]
                                    1                           1 
-    99 unicaAsignacionCasa_menorIgual[v17]
+    79 unicaAsignacionCasa_menorIgual[v17]
                                    1                           1 
-   100 unicaAsignacionCasa_menorIgual[v18]
+    80 unicaAsignacionCasa_menorIgual[v18]
                                    1                           1 
-   101 unicaAsignacionCasa_menorIgual[v19]
+    81 unicaAsignacionCasa_menorIgual[v19]
                                    1                           1 
-   102 s_mayorIgual               59            59               
-   103 s_menorIgual               59                          59 
+    82 z_menorIgual[c0]
+                                   1                           8 
+    83 z_menorIgual[c1]
+                                   2                           8 
+    84 z_menorIgual[c2]
+                                   2                           8 
+    85 z_menorIgual[c3]
+                                   3                           8 
+    86 z_menorIgual[c4]
+                                   1                           8 
+    87 z_menorIgual[c5]
+                                   2                           8 
+    88 z_menorIgual[c6]
+                                   4                           8 
+    89 z_menorIgual[c7]
+                                   8                           8 
+    90 z_menorIgual[c8]
+                                   1                           8 
+    91 z_menorIgual[c9]
+                                   8                           8 
+    92 z_menorIgual[c10]
+                                   1                           8 
+    93 z_menorIgual[c11]
+                                   1                           8 
+    94 z_menorIgual[c12]
+                                   2                           8 
+    95 z_menorIgual[c13]
+                                   4                           8 
+    96 z_menorIgual[c14]
+                                   4                           8 
+    97 z_menorIgual[c15]
+                                   7                           8 
+    98 z_menorIgual[c16]
+                                   2                           8 
+    99 z_menorIgual[c17]
+                                   3                           8 
+   100 z_menorIgual[c18]
+                                   2                           8 
+   101 z_menorIgual[c19]
+                                   2                           8 
 
    No. Column name       Activity     Lower bound   Upper bound
 ------ ------------    ------------- ------------- -------------
@@ -225,11 +223,11 @@ Objective:  resultado = 9 (MINimum)
     10 x[c0,v9]     *              0             0             1 
     11 x[c0,v10]    *              0             0             1 
     12 x[c0,v11]    *              0             0             1 
-    13 x[c0,v12]    *              1             0             1 
+    13 x[c0,v12]    *              0             0             1 
     14 x[c0,v13]    *              0             0             1 
     15 x[c0,v14]    *              0             0             1 
     16 x[c0,v15]    *              0             0             1 
-    17 x[c0,v16]    *              0             0             1 
+    17 x[c0,v16]    *              1             0             1 
     18 x[c0,v17]    *              0             0             1 
     19 x[c0,v18]    *              0             0             1 
     20 x[c0,v19]    *              0             0             1 
@@ -274,7 +272,7 @@ Objective:  resultado = 9 (MINimum)
     59 x[c2,v18]    *              0             0             1 
     60 x[c2,v19]    *              0             0             1 
     61 x[c3,v0]     *              0             0             1 
-    62 x[c3,v1]     *              1             0             1 
+    62 x[c3,v1]     *              0             0             1 
     63 x[c3,v2]     *              0             0             1 
     64 x[c3,v3]     *              0             0             1 
     65 x[c3,v4]     *              0             0             1 
@@ -282,7 +280,7 @@ Objective:  resultado = 9 (MINimum)
     67 x[c3,v6]     *              0             0             1 
     68 x[c3,v7]     *              0             0             1 
     69 x[c3,v8]     *              0             0             1 
-    70 x[c3,v9]     *              0             0             1 
+    70 x[c3,v9]     *              1             0             1 
     71 x[c3,v10]    *              0             0             1 
     72 x[c3,v11]    *              0             0             1 
     73 x[c3,v12]    *              0             0             1 
@@ -345,19 +343,19 @@ Objective:  resultado = 9 (MINimum)
    130 x[c6,v9]     *              0             0             1 
    131 x[c6,v10]    *              0             0             1 
    132 x[c6,v11]    *              0             0             1 
-   133 x[c6,v12]    *              0             0             1 
+   133 x[c6,v12]    *              1             0             1 
    134 x[c6,v13]    *              0             0             1 
    135 x[c6,v14]    *              0             0             1 
    136 x[c6,v15]    *              0             0             1 
    137 x[c6,v16]    *              0             0             1 
    138 x[c6,v17]    *              0             0             1 
-   139 x[c6,v18]    *              1             0             1 
+   139 x[c6,v18]    *              0             0             1 
    140 x[c6,v19]    *              0             0             1 
    141 x[c7,v0]     *              0             0             1 
    142 x[c7,v1]     *              0             0             1 
    143 x[c7,v2]     *              0             0             1 
    144 x[c7,v3]     *              0             0             1 
-   145 x[c7,v4]     *              0             0             1 
+   145 x[c7,v4]     *              1             0             1 
    146 x[c7,v5]     *              0             0             1 
    147 x[c7,v6]     *              0             0             1 
    148 x[c7,v7]     *              0             0             1 
@@ -369,7 +367,7 @@ Objective:  resultado = 9 (MINimum)
    154 x[c7,v13]    *              0             0             1 
    155 x[c7,v14]    *              0             0             1 
    156 x[c7,v15]    *              0             0             1 
-   157 x[c7,v16]    *              1             0             1 
+   157 x[c7,v16]    *              0             0             1 
    158 x[c7,v17]    *              0             0             1 
    159 x[c7,v18]    *              0             0             1 
    160 x[c7,v19]    *              0             0             1 
@@ -379,7 +377,7 @@ Objective:  resultado = 9 (MINimum)
    164 x[c8,v3]     *              0             0             1 
    165 x[c8,v4]     *              0             0             1 
    166 x[c8,v5]     *              0             0             1 
-   167 x[c8,v6]     *              1             0             1 
+   167 x[c8,v6]     *              0             0             1 
    168 x[c8,v7]     *              0             0             1 
    169 x[c8,v8]     *              0             0             1 
    170 x[c8,v9]     *              0             0             1 
@@ -391,15 +389,15 @@ Objective:  resultado = 9 (MINimum)
    176 x[c8,v15]    *              0             0             1 
    177 x[c8,v16]    *              0             0             1 
    178 x[c8,v17]    *              0             0             1 
-   179 x[c8,v18]    *              0             0             1 
+   179 x[c8,v18]    *              1             0             1 
    180 x[c8,v19]    *              0             0             1 
    181 x[c9,v0]     *              0             0             1 
    182 x[c9,v1]     *              0             0             1 
    183 x[c9,v2]     *              0             0             1 
    184 x[c9,v3]     *              0             0             1 
-   185 x[c9,v4]     *              1             0             1 
+   185 x[c9,v4]     *              0             0             1 
    186 x[c9,v5]     *              0             0             1 
-   187 x[c9,v6]     *              0             0             1 
+   187 x[c9,v6]     *              1             0             1 
    188 x[c9,v7]     *              0             0             1 
    189 x[c9,v8]     *              0             0             1 
    190 x[c9,v9]     *              0             0             1 
@@ -413,7 +411,7 @@ Objective:  resultado = 9 (MINimum)
    198 x[c9,v17]    *              0             0             1 
    199 x[c9,v18]    *              0             0             1 
    200 x[c9,v19]    *              0             0             1 
-   201 x[c10,v0]    *              0             0             1 
+   201 x[c10,v0]    *              1             0             1 
    202 x[c10,v1]    *              0             0             1 
    203 x[c10,v2]    *              0             0             1 
    204 x[c10,v3]    *              0             0             1 
@@ -432,9 +430,9 @@ Objective:  resultado = 9 (MINimum)
    217 x[c10,v16]   *              0             0             1 
    218 x[c10,v17]   *              0             0             1 
    219 x[c10,v18]   *              0             0             1 
-   220 x[c10,v19]   *              1             0             1 
+   220 x[c10,v19]   *              0             0             1 
    221 x[c11,v0]    *              0             0             1 
-   222 x[c11,v1]    *              0             0             1 
+   222 x[c11,v1]    *              1             0             1 
    223 x[c11,v2]    *              0             0             1 
    224 x[c11,v3]    *              0             0             1 
    225 x[c11,v4]    *              0             0             1 
@@ -444,7 +442,7 @@ Objective:  resultado = 9 (MINimum)
    229 x[c11,v8]    *              0             0             1 
    230 x[c11,v9]    *              0             0             1 
    231 x[c11,v10]   *              0             0             1 
-   232 x[c11,v11]   *              1             0             1 
+   232 x[c11,v11]   *              0             0             1 
    233 x[c11,v12]   *              0             0             1 
    234 x[c11,v13]   *              0             0             1 
    235 x[c11,v14]   *              0             0             1 
@@ -473,7 +471,7 @@ Objective:  resultado = 9 (MINimum)
    258 x[c12,v17]   *              0             0             1 
    259 x[c12,v18]   *              0             0             1 
    260 x[c12,v19]   *              0             0             1 
-   261 x[c13,v0]    *              1             0             1 
+   261 x[c13,v0]    *              0             0             1 
    262 x[c13,v1]    *              0             0             1 
    263 x[c13,v2]    *              0             0             1 
    264 x[c13,v3]    *              0             0             1 
@@ -492,7 +490,7 @@ Objective:  resultado = 9 (MINimum)
    277 x[c13,v16]   *              0             0             1 
    278 x[c13,v17]   *              0             0             1 
    279 x[c13,v18]   *              0             0             1 
-   280 x[c13,v19]   *              0             0             1 
+   280 x[c13,v19]   *              1             0             1 
    281 x[c14,v0]    *              0             0             1 
    282 x[c14,v1]    *              0             0             1 
    283 x[c14,v2]    *              0             0             1 
@@ -542,9 +540,9 @@ Objective:  resultado = 9 (MINimum)
    327 x[c16,v6]    *              0             0             1 
    328 x[c16,v7]    *              0             0             1 
    329 x[c16,v8]    *              0             0             1 
-   330 x[c16,v9]    *              1             0             1 
+   330 x[c16,v9]    *              0             0             1 
    331 x[c16,v10]   *              0             0             1 
-   332 x[c16,v11]   *              0             0             1 
+   332 x[c16,v11]   *              1             0             1 
    333 x[c16,v12]   *              0             0             1 
    334 x[c16,v13]   *              0             0             1 
    335 x[c16,v14]   *              0             0             1 
@@ -613,7 +611,6 @@ Objective:  resultado = 9 (MINimum)
    398 x[c19,v17]   *              0             0             1 
    399 x[c19,v18]   *              0             0             1 
    400 x[c19,v19]   *              0             0             1 
-   401 z            *              9                             
 
 Integer feasibility conditions:
 
