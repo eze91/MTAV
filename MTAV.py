@@ -125,7 +125,6 @@ while True:
 		rest = preferencias_matrix[1:]
 		random.shuffle(rest)
 		preferencias_matrix = [first_line] + rest
-		print(preferencias_matrix)
 		viviendas = preferencias_matrix[0][1:]
 		familias = list(map(lambda x: x[0], preferencias_matrix))[1:]
 		CANT_FINAL = len(viviendas)
