@@ -3,8 +3,8 @@ ASIGNACIONES FINALES
 Familias : vivienda asignada
 ---------------------------------
 Casero : v3
-Perez : v1
-Sanchez : v2
+Perez : v2
+Sanchez : v1
 
 Satisfacción
 ---------------------------------
