@@ -1,36 +1,35 @@
 # MTAV
-Sistema de maximizacion del beneficio de asignación para cooperativas de viviendas.
+Sistema de maximizacion del beneficio en la asignación de viviendas.
 
 ##Instalación.
 
-El programa depende de la instalacion de GLPK.
-* Python 3 3.5.1
-* GLPK 4.52
+Antes de ejecutar el programa asegurase de tener instalado:
+* Python 3  (>= 3.5)
+* GLPK      (>= 4.5)
 
-Para poder ejecutar instale Python3 (https://www.python.org/downloads/). Se testeo con Python 3.5.1.
+Instale Python3 (https://www.python.org/downloads/). Se testeo con Python 3.5.1 (no es necesaria instalar ninguna biblioteca de python adicional).
 
-Antes de ejecutarlo instale el GLPK (https://en.wikibooks.org/wiki/GLPK) y cheque que este instalado correctamente ejecutando:
+Instale GLPK (https://en.wikibooks.org/wiki/GLPK) y cheque que este instalado correctamente ejecutando.
 ```
 $ glpsol --version
 ```
+El programa esta testeado con la versión 4.52.
 
-El programa esta testeado con la version 4.52.
-
-Luego de instaladas estas dependencias ejecute el programa de la siguiente forma:
+Luego de instaladas estas dependencias ejecute el programa posicionado en la carpeta MTAV de la siguiente forma:
 ```
 $ python3 MTAV.py
 ```
-Por mas informacion recurra a la carpeta 'documentacion'.
+Por mas información recurra a la carpeta 'documentacion'.
 
 ## Instrucciones:
 
 ### Preparación del archivo
 
-El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. Luego, en la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
+El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. En la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
 
-El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estandar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser como, puede ser '.', ',', ';' o tabulador.
+El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estándar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser una coma, pudiendo también ser '.', ',', ';' o tabulador.
 
-Lo puede crear en su editor de planillas eletronica de su preferencia y exportarlo en formato CSV con el combre 'preferencias.csv' guardandolo en la misma carpeta del programa (llamada MTAV)
+Lo puede crear en su editor de planillas electrónicas de su preferencia y exportarlo en formato CSV con el nombre 'preferencias.csv' guardandolo en la misma carpeta del programa (llamada MTAV)
 
 Ejemplo en editor de planilla de cálculo:
 
@@ -42,12 +41,14 @@ Ejemplo en editor de planilla de cálculo:
 |Rodriquez Da´Silva |  3  |  1  |  4  |  2  |
 
 
-El siguiente ejemplo representa que la vivienda 201 es la preferida por la familia Sanchez, la 202 es la segunda y asi sucesivamente (sienda la 101 es la menos deseada por la familia Sanchez). Luego es igual para el resto de las familias.
+El siguiente ejemplo representa que la vivienda 201 es la preferida por la familia Sanchez, la 202 es la segunda y así sucesivamente (siendo la 101 la menos deseada por la familia Sanchez). Es de forma análoga para el resto de las familias.
 
-Los cuidados que se deben tener (y que serán chequiados por el programa avisando en caso de algún tipo de anomalia) son:
+Los cuidados que se deben tomar (y que serán chequeados por el programa avisando en caso de algún tipo de anomalía) son:
 
-- La cantidad de familais debe ser igual a la cantidad de viviendas (cantidad de filas igual a la cantidad de columnas).
-- Las preferencias deben ser una permutacion de naturales de { 1, 2, ... , CANTIDAD_VIVIENDAS } (sin repetidos ni salteados)
+- La cantidad de familias debe ser igual a la cantidad de viviendas (cantidad de filas igual a la cantidad de columnas).
+- Las preferencias deben ser una permutación de naturales de [1, 2, ..., CANTIDAD_VIVIENDAS] (sin repetidos ni salteados)
+
+ATENCIÓN: para evitar complicaciones con el formato del texto evite caracteres especiales no estándares del ingles (como la letra Ñ, tilde, etc.).
 
 La tabla anterior exportada a CSV:
 ```
@@ -57,26 +58,47 @@ Pino               ,  2  ,  4  ,  1  ,  3
 Cancela            ,  4  ,  2  ,  1  ,  3 
 Rodriquez Da´Silva ,  3  ,  1  ,  4  ,  2 
 ```
+
 Se cuenta con un ejemplo de entrada ('preferencias_EJEMPLO.csv') para tomar como referencia.
 
 
 ### Ejecutar comando Asignar
 
-Luego de creado el archivo como se detalla en el punto 1 seleccione el comando (A)signar. Luego el programa pedirá confirmacion para empezar la asignación. Si cree que el el archivo preferencias es correcto, acepte. En breves segundos la asignación debería estar completa.
+Luego de creado el archivo como se detalla en el punto 1 y cuando crea que el archivo de preferencias es correcto, seleccione el comando (A)signar. 
+
+Si se encuentra alguna inconsistencia con los datos (como se detalla en el punto anterior), se le notificará sobre ello. Corrija el archivo (preferencias.csv) en caso de ser necesario. Si no existe ningún error el programa terminará de realizar la asignación en breves segundos, mostrándose el progreso en pantalla (lo que es desplegado en pantalla se guardará en la carpeta ‘logs’).
+
 
 ### Asignación final
 
+Cuando el programa termine de ejecutar, se abriría automáticamente el archivo que contiene las asignaciones finales. Puede encontrarlo en MTAV/asignaciones_finales.txt.
+
+ATENCIÓN: al ejecutar nuevamente el programa este archivo se sobre escribirá. Cámbiele el nombre si desea conservarlo.
+
 ## Metodología
 
-En la asignación se busca maximizar la satisfacción global de todos los cooperativistas. Para esto (y debido a que la forma de ingresar las preferencias es con 1 siendo la vivienda preferida y a medida que crece aumenta la insatisfacción) se busca minimizar la suma de todas las preferencias por las viviendas.
-
-Luego de encontrado un mínimo, se procede a buscar otra asignación que levante la máxima insatisfacción de un cooperativista.
+La metodología aplicada (en dos pasos secuenciales) es la siguiente:
+* Como primer paso se busca minimizar la insatisfacción de cada uno de los cooperativistas, es decir, se busca una de las asignaciones en la que la peor asignación sea la mejor posible.
+* Tomando como cota superior el nivel de insatisfacción que se obtiene de la solución dada por el modelo anterior, se busca la asignación que maximice la satisfacción global respetando esa cota.
 
 ## Colaboración
 
-## Licencia
+Si quiere colaborar lo alentamos a que lo haga.
 
-El software disponde de licencia MIT.
+El repositorio central se encuentra en: https://github.com/eze91/MTAV
+
+Puede:
+ * señalar issues
+ * corregir issues
+ * depurar el código
+ * sugerir nuevas funcionalidades
+ * agregar nuevas funcionalidades
+ * cualquier cosa para mejorar el programa y dejar contentos a los cooperativistas
+
+Para colaborar como desarrollador realice un Pull Request que lo mercaremos a la brevedad luego de probarlo.
+
+
+## Licencia
 
 Por la presente se autoriza, de forma gratuita, a cualquier persona que haya obtenido una copia de este software y archivos de documentación asociados (el "Software"), a utilizar el Software sin restricción, incluyendo sin limitación los derechos de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar, y/o vender copias de este Software, y permitir lo mismo a las personas a las que se les proporcione el Software, de acuerdo con las siguientes condiciones:
 
