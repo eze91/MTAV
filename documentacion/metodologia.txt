@@ -1,5 +1,5 @@
 Metodología:
 
-En la asignación se busca maximizar la satisfacción global de todos los cooperativistas. Para esto (y debido a que la forma de ingresar las preferencias es con 1 siendo la vivienda preferida y a medida que crece aumenta la insatisfacción) se busca minimizar la suma de todas las preferencias por las viviendas.
+Como primer paso se busca minimizar la insatisfacción de cada uno de los cooperativistas, es decir, se busca una de las asignaciones en la que la peor asignación sea la mejor posible.
 
-Luego de encontrado un mínimo, se procede a buscar otra asignación que levante la máxima insatisfacción de un cooperativista.
+Tomando como cota superior el nivel de insatisfacción que se obtiene de la solución dada por el modelo anterior, se busca la asignación que maximice la satisfacción global respetando esa cota.
