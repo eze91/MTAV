@@ -4,17 +4,14 @@ Antes de ejecutar el programa asegurase de tener instalado:
 - Python 3  (>= 3.5)
 - GLPK      (>= 4.5)
 
-Para poder ejecutar instale Python3 (https://www.python.org/downloads/). Se testeo con Python 3.5.1.
+Instale Python3 (https://www.python.org/downloads/). Se testeo con Python 3.5.1 (no es necesaria instalar ninguna biblioteca de python adicional).
 
-Es posible que deba instalar 
-
-Antes de ejecutarlo instale el GLPK (https://en.wikibooks.org/wiki/GLPK) y cheque que este instalado correctamente ejecutando.
+Instale GLPK (https://en.wikibooks.org/wiki/GLPK) y cheque que este instalado correctamente ejecutando.
 $ glpsol --version
 
-El programa esta testeado con la version v4.52.
+El programa esta testeado con la versión 4.52.
 
-Luego de instaladas estas dependencias ejecute el programa de la siguiente forma:
+Luego de instaladas estas dependencias ejecute el programa posicionado en la carpeta MTAV de la siguiente forma:
 $ python3 MTAV.py
 
-Por mas informacion recurra a la carpeta 'documentacion'.
-
+Por mas información recurra a la carpeta 'documentacion'.

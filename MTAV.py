@@ -5,6 +5,7 @@ import sys
 import time
 import re
 import csv
+import random
 
 class Menu:
 	def presentar(self):
@@ -110,17 +111,21 @@ while True:
 		print("-------------------------------------------------------------")
 		print("Comenzando con la asignacion.\n")
 		#read csv
-		preferencias_file = open('IngresoPreferenciasVivienda.csv', 'r')
-		separador = max(map((lambda x : (preferencias_file.read().count(x), x)), ['.', ',', ';', "\t"]))[1]
+		preferencias_file = open('preferencias.csv', 'r')
+		texto = preferencias_file.read()
+		separador = max(map((lambda x : (texto.count(x), x)), ['.', ',', ';', "\t"]))[1]
 		preferencias_file.close
-		preferencias_file = open('IngresoPreferenciasVivienda.csv', 'r')
+		preferencias_file = open('preferencias.csv', 'r')
 		preferencias_csv = csv.reader(preferencias_file, delimiter=separador)
 		preferencias_matrix = []
 		for line in preferencias_csv:
 			preferencias_matrix.append(line)
 
-		
-		# book = xlrd.open_workbook('IngresoPreferencias_matrixVivienda.xls')
+		first_line = preferencias_matrix[0]
+		rest = preferencias_matrix[1:]
+		random.shuffle(rest)
+		preferencias_matrix = [first_line] + rest
+		print(preferencias_matrix)
 		viviendas = preferencias_matrix[0][1:]
 		familias = list(map(lambda x: x[0], preferencias_matrix))[1:]
 		CANT_FINAL = len(viviendas)
@@ -220,34 +225,26 @@ while True:
 								raw_asignaciones.append(get_asignacion(lines[j]))
 						break
 				file.close()
-				minima = 0
+				suma_total = 0
 				file = open("utils_GLPK/soluciones/MTAV_asign.sol",'r')
 				for line in lines:
 					if is_asignation(line):
-						minima = get_maximum(line)
+						suma_total = get_maximum(line)
 						break
 				file.close()
 
 				f = open('asignaciones_finales.txt','w')
-				f.write("Asignaciones finales\n\nFamilias : vivienda asignada\n---------------------------------\n")
-				for raw_asignacion in raw_asignaciones:
+				f.write("ASIGNACIONES FINALES\n\nFamilias : vivienda asignada\n---------------------------------\n")
+
+				for raw_asignacion in sorted(raw_asignaciones, key=lambda familia: familias[familia[0]]):
 					f.write('%s : %s\n' % (familias[raw_asignacion[0]], viviendas[raw_asignacion[1]]))
 				f.write('\n')
 				f.write("Satisfacción\n---------------------------------\n")
-				f.write('Global : %d\n' % objective)
-				f.write('Promedio : %f\n' % (float(objective)/CANT_FINAL))
-				f.write('Mínima : %d\n' % minima)
+				f.write('Global : %d\n' % suma_total)
+				f.write('Promedio : %.2f\n' % (float(suma_total)/CANT_FINAL))
+				f.write('Mínimo : %d\n' % objective)
 				f.close()	
-
 				print("\nSE COMPLETÓ LA ASIGNACION.\nPor favor revise el archivo asignaciones_finales.txt\n")
-				total = 0
-				for raw_asignacion in raw_asignaciones:
-					total += preferencias[raw_asignacion[0]][1][raw_asignacion[1]]
-				print(preferencias)
-				for raw_asignacion in raw_asignaciones:
-					print(familias[raw_asignacion[0]], viviendas[raw_asignacion[1]])
-				print(raw_asignaciones)
-				print(total)
 				os.system("open asignaciones_finales.txt")
 
 	else:

@@ -1,1 +1,14 @@
-Como colaborar.
+Si quiere colaborar lo alentamos a que lo haga.
+
+El repositorio central se encuentra en:
+https://github.com/eze91/MTAV
+
+Puede:
+ - señalar issues
+ - corregir issues
+ - depurar el código
+ - sugerir nuevas funcionalidades
+ - agregar nuevas funcionalidades
+ - cualquier cosa para mejorar el programa y dejar contentos a los cooperativistas
+
+Para colaborar como desarrollador realice un Pull Request que lo mercaremos a la brevedad luego de probarlo.
