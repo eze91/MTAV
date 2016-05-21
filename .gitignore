@@ -3,6 +3,8 @@ asignaciones_finales.txt
 
 .goutputstream*
 
+*.sitx
+
 *.dat
 *.sol
 *.log
