@@ -1,8 +1,10 @@
 preferencias.csv
 asignaciones_finales.txt
 
-#.goutputstream*
+.goutputstream*
 
 *.dat
 *.sol
 *.log
+
+.DS_Store
