@@ -1,0 +1,10 @@
+preferencias.csv
+asignaciones_finales.txt
+
+.goutputstream*
+
+*.dat
+*.sol
+*.log
+
+.DS_Store

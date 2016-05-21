@@ -3,11 +3,11 @@ Instrucciones:
 1) Preparación del archivo
    -----------------------
 
-El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. Luego, en la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
+El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. En la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
 
-El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estandar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser como, puede ser '.', ',', ';' o tabulador.
+El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estándar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser una coma, pudiendo también ser '.', ',', ';' o tabulador.
 
-Lo puede crear en su editor de planillas eletronica de su preferencia y exportarlo en formato CSV con el combre 'preferencias.csv' guardandolo en la misma carpeta del programa (llamada MTAV)
+Lo puede crear en su editor de planillas electrónicas de su preferencia y exportarlo en formato CSV con el nombre 'preferencias.csv' guardandolo en la misma carpeta del programa (llamada MTAV)
 
 Ejemplo en editor de planilla de cálculo:
 
@@ -27,12 +27,12 @@ Rodriquez Da´Silva |   3  |  1  |  4  |  2  |
  
 Identificadores de familia
 
-El siguiente ejemplo representa que la vivienda 201 es la preferida por la familia Sanchez, la 202 es la segunda y asi sucesivamente (sienda la 101 es la menos deseada por la familia Sanchez). Luego es igual para el resto de las familias.
+El siguiente ejemplo representa que la vivienda 201 es la preferida por la familia Sanchez, la 202 es la segunda y así sucesivamente (siendo la 101 la menos deseada por la familia Sanchez). Es de forma análoga para el resto de las familias.
 
-Los cuidados que se deben tener (y que serán chequiados por el programa avisando en caso de algún tipo de anomalia) son:
+Los cuidados que se deben tomar (y que serán chequeados por el programa avisando en caso de algún tipo de anomalía) son:
 
-- La cantidad de familais debe ser igual a la cantidad de viviendas (cantidad de filas igual a la cantidad de columnas).
-- Las preferencias deben ser una permutacion de naturales de [1, 2, ..., CANTIDAD_VIVIENDAS] (sin repetidos ni salteados)
+- La cantidad de familias debe ser igual a la cantidad de viviendas (cantidad de filas igual a la cantidad de columnas).
+- Las preferencias deben ser una permutación de naturales de [1, 2, ..., CANTIDAD_VIVIENDAS] (sin repetidos ni salteados)
 
 La tabla anterior exportada a CSV:
 
@@ -48,7 +48,15 @@ Se cuenta con un ejemplo de entrada ('preferencias_EJEMPLO.csv') para tomar como
 2) Ejecutar comando Asignar
    ------------------------
 
-Luego de creado el archivo como se detalla en el punto 1 seleccione el comando (A)signar. Luego el programa pedirá confirmacion para empezar la asignación. Si cree que el el archivo preferencias es correcto, acepte. En breves segundos la asignación debería estar completa.
+Luego de creado el archivo como se detalla en el punto 1 y cuando crea que el archivo de preferencias es correcto, seleccione el comando (A)signar. 
+
+Si se encuentra alguna inconsistencia con los datos (como se detalla en el punto anterior), se le notificará sobre ello. Corrija el archivo (preferencias.csv) en caso de ser necesario. Si no existe ningún error el programa terminará de realizar la asignación en breves segundos, mostrándose el progreso en pantalla (lo que es desplegado en pantalla se guardará en la carpeta ‘logs’).
+
 
 3) Asignación final
    ----------------
+
+Cuando el programa termine de ejecutar, se abriría automáticamente el archivo que contiene las asignaciones finales. Puede encontrarlo en MTAV/asignaciones_finales.txt.
+
+ATENCIÓN: al ejecutar nuevamente el programa este archivo se sobre escribirá. Cámbiele el nombre si desea conservarlo.
+

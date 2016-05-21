@@ -1,4 +1,4 @@
-Metodología utilizada:
+Metodología:
 
 En la asignación se busca maximizar la satisfacción global de todos los cooperativistas. Para esto (y debido a que la forma de ingresar las preferencias es con 1 siendo la vivienda preferida y a medida que crece aumenta la insatisfacción) se busca minimizar la suma de todas las preferencias por las viviendas.
 

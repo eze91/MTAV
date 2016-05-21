@@ -1,4 +1,4 @@
-El software tiene licencia MIT.
+El software MTAV dispone de licencia MIT.
 
 Copyright (c) 2016 MTAV
 
