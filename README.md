@@ -3,22 +3,24 @@ Sistema de maximizacion del beneficio en la asignación de viviendas.
 
 ##Instalación.
 
-Antes de ejecutar el programa asegurase de tener instalado:
+Antes de ejecutar el programa asegúrese de tener instalado:
 * Python 3  (>= 3.5)
 * GLPK      (>= 4.5)
 
-Instale Python3 (https://www.python.org/downloads/). Se testeo con Python 3.5.1 (no es necesaria instalar ninguna biblioteca de python adicional).
+En caso contrario, instale Python3 (https://www.python.org/downloads/). Se testeo con Python 3.5.1 (no es necesaria instalar ninguna biblioteca de python adicional).
 
-Instale GLPK (https://en.wikibooks.org/wiki/GLPK) y cheque que este instalado correctamente ejecutando.
+Instale GLPK (https://en.wikibooks.org/wiki/GLPK) y chequeé que este instalado correctamente ejecutando.
 ```
 $ glpsol --version
 ```
-El programa esta testeado con la versión 4.52.
+El programa está testeado con la versión 4.52.
 
-Luego de instaladas estas dependencias ejecute el programa posicionado en la carpeta MTAV de la siguiente forma:
+Luego de instaladas estas dependencias ejecute el programa (posicionado en la carpeta MTAV) de la siguiente forma:
 ```
 $ python3 MTAV.py
 ```
+Si quiere probar que todo funcione correctamente antes de proseguir renombre el archivo 'preferencias_EJEMPLO.csv' que se encuentra en la carpeta MTAV a 'preferencias.csv' y ejecute el comando (A)signar del programa en consola. Si todo es correcto se deberán desplegar los resultados (más información sobre el funcionamiento en la próxima sección).
+
 Por mas información recurra a la carpeta 'documentacion'.
 
 ## Instrucciones:
@@ -27,9 +29,9 @@ Por mas información recurra a la carpeta 'documentacion'.
 
 El programa espera una tabla con los identificadores de las viviendas en la primera columna y con las familias en la primera fila. En la fila de cada familia se listan las preferencias de las familias por las viviendas. Estas preferencias se representan en forma numérica siendo el numero (natural) la preferencia por la vivienda.
 
-El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estándar y soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser una coma, pudiendo también ser '.', ',', ';' o tabulador.
+El formato de entrada al programa es un archivo en formato CSV (Coma Separated Values), un formato estándar y abierto soportado para exportar e importar por programas populares de planillas electrónicas como Microsoft Excel, OpenCalc y Google Sheets. El separador no necesariamente debe ser una coma, pudiendo también ser '.', ',', ';' o tabulador.
 
-Lo puede crear en su editor de planillas electrónicas de su preferencia y exportarlo en formato CSV con el nombre 'preferencias.csv' guardandolo en la misma carpeta del programa (llamada MTAV)
+Lo puede crear en su editor de planillas electrónicas de su preferencia y exportarlo en formato CSV con el nombre 'preferencias.csv' guardándolo en la misma carpeta del programa (llamada MTAV)
 
 Ejemplo en editor de planilla de cálculo:
 
@@ -83,9 +85,7 @@ La metodología aplicada (en dos pasos secuenciales) es la siguiente:
 
 ## Colaboración
 
-Si quiere colaborar lo alentamos a que lo haga.
-
-El repositorio central se encuentra en: https://github.com/eze91/MTAV
+Si quiere colaborar lo alentamos a que lo haga. El repositorio central se encuentra en: https://github.com/eze91/MTAV
 
 Puede:
  * señalar issues
@@ -95,7 +95,7 @@ Puede:
  * agregar nuevas funcionalidades
  * cualquier cosa para mejorar el programa y dejar contentos a los cooperativistas
 
-Para colaborar como desarrollador realice un Pull Request que lo mercaremos a la brevedad luego de probarlo.
+Para colaborar como desarrollador realice un Pull Request que lo mergearemos a la brevedad luego de probarlo.
 
 
 ## Licencia
@@ -104,4 +104,4 @@ Por la presente se autoriza, de forma gratuita, a cualquier persona que haya obt
 
 El aviso de copyright anterior y este aviso de permiso tendrán que ser incluidos en todas las copias o partes sustanciales del Software.
 
-EL SOFTWARE SE ENTREGA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, YA SEA EXPRESA O IMPLÍCITA, INCLUYENDO, A MODO ENUNCIATIVO, CUALQUIER GARANTÍA DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DEL COPYRIGHT INCLUIDOS EN ESTE AVISO SERÁN RESPONSABLES DE NINGUNA rECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UN LITIGIO, AGRAVIO O DE OTRO MODO, RESULTANTES DE O EN CONEXION CON EL SOFTWARE, SU USO U OTRO TIPO DE ACCIONES EN EL SOFTWARE.''')
+EL SOFTWARE SE ENTREGA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, YA SEA EXPRESA O IMPLÍCITA, INCLUYENDO, A MODO ENUNCIATIVO, CUALQUIER GARANTÍA DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DEL COPYRIGHT INCLUIDOS EN ESTE AVISO SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UN LITIGIO, AGRAVIO O DE OTRO MODO, RESULTANTES DE O EN CONEXION CON EL SOFTWARE, SU USO U OTRO TIPO DE ACCIONES EN EL SOFTWARE.''')
