@@ -1,10 +1,8 @@
 preferencias.csv
 asignaciones_finales.txt
-.goutputstream*
 
-utils_GLPK/datos/
-*.dat
-utils_GLPK/soluciones/
-*.sol
-utils_GLPK/logs/
-*.log
+#.goutputstream*
+
+**.dat
+**.sol
+**.log
